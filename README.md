@@ -1,27 +1,19 @@
-# 基于 Vue 3 + Vite + TypeScript + WebSocket 直播流（支持RTSP、RTMP、FLV、HLS） 在线场景智能识别系统
+# 基于 Vue 3 + Vite + TypeScript + WebSocket 
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+为了提高实时视频流在AI识别领域的简单易用程度，本系统支持直播流（RTSP、RTMP、FLV、HLS） 在线场景智能识别，
+只需要传一个流地址就能实现实时识别效果，当然目前的模型用的是开源的yolov4，在很多特定场景下会出现误识别
+的情况，如何提高识别率这是后续的问题了，本系统仅供参考学习使用。
 
-## Recommended IDE Setup
+## 基于go版本的服务端
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+目前AI领域如何使用大部分还是基于python，如果您对goland在AI领域如何使用感兴趣，请查看[go-live-stream-ai](https://github.com/sanduword/go-live-stream-ai)
 
-### If Using `<script setup>`
+## 识别效果
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+![image](doc/0002.jpg)
+![image](doc/0003.jpg)
 
-## Type Support For `.vue` Imports in TS
+### 目前存在问题
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
-
-### If Using Volar
-
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-### If Using Vetur
-
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+1. 目前只能debug，build还有点问题，后续再修复该问题；
+2. 后续有时间再把css那块改成css module。
