@@ -1,4 +1,4 @@
-# Vue 3 + Typescript + Vite
+# 基于 Vue 3 + Vite + TypeScript + WebSocket 直播流（支持RTSP、RTMP、FLV、HLS） 在线场景智能识别系统
 
 This template should help get you started developing with Vue 3 and Typescript in Vite.
 
