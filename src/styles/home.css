@@ -1,0 +1,355 @@
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+p,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 13px/1.5 'Microsoft YaHei', arial, tahoma, \5b8b\4f53, sans-serif;
+  background: #fff;
+  color: #555;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  -moz-outline: none;
+}
+
+a:hover {
+  color: #13d778;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: ' ';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+#app{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container{
+  height: 100%;
+  background: #080808;
+}
+
+.home{
+  flex: 1;
+  flex-direction: row;
+  color: #fff;
+  font-size: 0.78vw;
+  height: 100%;
+}
+
+.home .header{
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+}
+
+.home .content{
+  height: 83vh;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.home .content .not{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25vw;
+  color: #d4237a;
+}
+
+.home .content .nor-cols{
+  color: #fff;
+}
+
+.home .footer{
+  height: 5vh;
+}
+
+/* header */
+.home .header .t-dynamic{
+  padding-left: 2.5vw;
+  position: absolute;
+}
+
+.home .header h2 {
+  font-size: 1.6vw;
+  font-family: Source Han Sans CN;
+  font-weight: 600;
+  letter-spacing: .26vw;
+}
+
+.home .header .h-d-tips{
+  width: 90%;
+  position: absolute;
+  margin-top: 0.52vw;
+  height: 1px;
+  font: inherit;
+  vertical-align: baseline;
+  background: linear-gradient(90deg,#000,#0e7fbf,#0e7fbf,#0e7fbf,#000);
+}
+.home .header .h-d-tips:before {
+  content: " ";
+  display: block;
+  width: 5px;
+  height: 1px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-animation: enterTips 1.6s linear infinite;
+  animation: enterTips 1.6s linear infinite;
+  background: #fff;
+}
+
+@keyframes enterTips{
+  0%{opacity:0;left:0;width:3px}
+  50%{opacity:1;left:50%;width:5px}
+  to{opacity:0;left:100%;width:3px}
+}
+
+/* content */
+.home .content .live-ai{
+  width: 65%;
+  position: relative;
+}
+.home .content .live-data{
+  width: 35%;
+  position: relative;
+}
+
+.home .content .la-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2vw 3vw 1vw 2.5vw;
+}
+.home .content .la-cavas{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../assets/live.png);
+  background-size: 100% 100%;
+}
+
+.home .content .la-cavas canvas {
+  width: 99%;
+  height: 99%;
+  position: absolute;
+  -webkit-clip-path: polygon(0 .7vw,.7vw .21vw,99% .21vw,100% .7vw,100% 98%,99% 99%,.7vw 99%,0 98%);
+  clip-path: polygon(0 .7vw,.7vw .21vw,99% .21vw,100% .7vw,100% 98%,99% 99%,.7vw 99%,0 98%);
+}
+
+.home .live-data .ld-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2vw 0vw 1vw 0vw;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.home .live-data .ld-box ul{
+  width: 100%;
+  padding: 0vw .78vw;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.home .live-data .ld-box li{
+  flex-direction: row;
+  width: 33.333%;
+  padding: 0 0.78vw 2.5vw 0.52vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.home .live-data .ld-box .ld-sin{
+  width: 100%;
+  min-height: 5.16vw;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.52vw .52vw;
+  background-image: url(../assets/real_dot.png);
+  background-size: 100% 100%;
+}
+
+.home .live-data .ld-sin img{
+  height: 2.3vw;
+  padding-right: 0.52vw;
+}
+
+.home .live-data .ld-sin .ld-sts{
+  padding-left: 0.52vw;
+}
+
+.home .live-data .ld-sin .ld-sts h3{
+  color: #fff;
+  font-size: 1.25vw;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.home .live-data .ld-sin .ld-sts .ld-num{
+  font-size: 1.7vw;
+  font-weight: 500;
+  color: #ffde00;
+}
+
+.home .live-data .ld-sin .ld-sts .ld-unit{
+  margin-left: 0.36vw;
+  font-size: 0.52vw;
+  font-weight: 600;
+  color: #ffde00;
+}
+
+.home  .tect-sacn{
+  position: absolute;
+  z-index: 7;
+  top: 0;
+  left: 0;
+  height: 75%;
+  width: 99%;
+  border-bottom: 3px solid rgba(28, 180, 235,.6);
+  -webkit-animation: scan 2s infinite;
+  -moz-animation: scan 2s infinite;
+  animation: scan 2s infinite;
+  background: -webkit-gradient(linear,left top,left bottom,from(transparent),to(rgba(28, 180, 235,.6)));
+  background: -webkit-linear-gradient(top,transparent,rgba(28, 180, 235,.6));
+  background: -moz-linear-gradient(top,transparent,rgba(28, 180, 235,.6));
+  background: linear-gradient(180deg,transparent,rgba(28, 180, 235,.6));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#ff3e88f1",GradientType=0);
+}
+
+/*页面更新效果*/
+@-webkit-keyframes scan {
+  0% {
+    width: 0;
+    opacity: 0.7
+  }
+
+  to {
+    opacity: 0;
+    width: 100%
+  }
+}
+
+@-moz-keyframes scan {
+  0% {
+    width: 0;
+    opacity: 0.7
+  }
+
+  to {
+    opacity: 0;
+    width: 100%
+  }
+}
+
+@keyframes scan {
+  0% {
+    width: 0;
+    opacity: 0.7
+  }
+
+  to {
+    opacity: 0;
+    width: 100%
+  }
+}
