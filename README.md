@@ -13,7 +13,29 @@
 ![出入口识别](docs/0002.jpg)
 ![出入口识别](docs/0003.jpg)
 
-### 目前存在问题
+## 目前存在问题
 
-1. 目前只能debug，build还有点问题，后续再修复该问题；
-2. 后续有时间再把css那块改成css module。
+1. 目前采用的css写法，后续换成css module写法
+
+2. 需支持PC和移动端H5
+
+
+## 如何使用
+
+### 克隆项目
+
+git clone https://github.com/sanduword/vue3-live-stream-ai.git
+
+### 安装依赖
+
+npm install
+# or
+yarn add
+
+### 启动项目
+
+npm run dev
+
+### 项目打包
+
+npm run build

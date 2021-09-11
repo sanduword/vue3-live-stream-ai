@@ -13,16 +13,13 @@
 import { defineComponent, reactive, onMounted, ref } from 'vue'
 export default defineComponent({
   name: 'LiveAi',
-  props: {
-    
-  },
   setup(props, content) {
     const state = reactive({
-      context: null,
+      context: ref<any>(null),
       not: true
     })
 
-    const comStream = ref<null>(null)
+    const comStream = ref<any>(null)
 
     //console.log('props', props.img_base)
     //let imgBase = ref(null)

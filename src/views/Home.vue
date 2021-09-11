@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <div class="content">
-      <LiveAi ref="comLiveRef" v-if="state.isAnaly && !state.loading" />
+      <LiveAi ref="comLiveRef" v-if="state.isAnaly && !state.loading"/>
       <LiveData ref="comDataRef" v-if="state.isAnaly && !state.loading"/>
       <div class="not" v-if="!state.isAnaly && !state.loading">{{state.err}}</div>
       <Loading v-if="state.isAnaly && state.loading" />
@@ -47,8 +47,8 @@ export default defineComponent({
     })
 
     const route = useRoute()
-    const comLiveRef = ref<null>(null)
-    const comDataRef = ref<null>(null)
+    const comLiveRef = ref<any>(null)
+    const comDataRef = ref<any>(null)
 
     // 初始化
     const initWs = (): void => {

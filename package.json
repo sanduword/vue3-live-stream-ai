@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build", 
     "serve": "vite preview"
   },
   "dependencies": {
     "@types/node": "^16.6.2",
-    "vite-plugin-style-import": "^1.1.1",
     "vue": "^3.2.4",
     "vue-router": "^4.0.11",
     "vuex": "4.0"

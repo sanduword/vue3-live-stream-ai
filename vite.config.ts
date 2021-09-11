@@ -1,71 +1,33 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import styleImport from 'vite-plugin-style-import'
-//import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue()
-    // styleImport({
-    //   libs: [
-    //     {
-    //       libraryName: 'element-plus',
-    //       esModule: true,
-    //       ensureStyleFile: true,
-    //       resolveStyle: (name) => {
-    //         return `element-plus/lib/theme-chalk/${name}.css`;
-    //       },
-    //       resolveComponent: (name) => {
-    //         return `element-plus/lib/${name}`;
-    //       },
-    //     }
-    //   ]
-    // })
-  ],
+// https://cn.vitejs.dev/config/#config-intellisense 配置文件说明
 
-  /**
-   * 在生产中服务时的基本公共路径。
-   * @default '/'
-   */
-   base: './',
-   /**
-   * 与“根”相关的目录，构建输出将放在其中。如果目录存在，它将在构建之前被删除。
-   * @default 'dist'
-   */
-   // outDir: 'dist',
-   server: {
-     // hostname: '0.0.0.0',
-     host: "localhost",
-     port: 3001,
-     // // 是否自动在浏览器打开
-     // open: true,
-     // // 是否开启 https
-     // https: false,
-     // // 服务端渲染
-     // ssr: false,
-     proxy: {
-       '/api': {
-         target: 'http://localhost:8069/',
-         changeOrigin: true,
-         ws: true,
-         rewrite: (pathStr) => pathStr.replace('/api', '')
-       },
-     },
-   }
-  //  resolve: {
-  //    // 导入文件夹别名
-  //    alias: {
-  //      '@': path.resolve(__dirname, './src'),
-  //      views: path.resolve(__dirname, './src/views'),
-  //      components: path.resolve(__dirname, './src/components'),
-  //      utils: path.resolve(__dirname, './src/utils'),
-  //      styles: path.resolve(__dirname, "./src/styles"),
-  //      assets: path.resolve(__dirname, "./src/assets"),
-  //      com: path.resolve(__dirname, "./src/components"),
-  //      store: path.resolve(__dirname, "./src/store"),
-  //      mixins: path.resolve(__dirname, "./src/mixins")
-  //    },
-  //  }
+// 开发环境配置
+const devConfig = {
+  plugins: [vue()],
+  server: {
+    host: "0.0.0.0", // 指定服务器应该监听哪个 IP 地址。 如果将此设置为 0.0.0.0 将监听所有地址，包括局域网和公网地址
+    port: 3001,
+    open: true, // 是否自动在浏览器打开
+    cors: true
+  },
+  css: {
+    
+  }
+}
 
+// 生产环境配置
+const proConfig = {
+  plugins: [vue()],
+  base: '/' // 如果有别名，例如/live-ai
+}
+
+export default defineConfig(({ command, mode }) => {
+  if (command === 'serve') {
+    return devConfig
+  } else {
+    return proConfig
+  }
 })
