@@ -29,7 +29,7 @@ git clone https://github.com/sanduword/vue3-live-stream-ai.git
 ### 安装依赖
 
 npm install
-# or
+or 
 yarn add
 
 ### 启动项目
